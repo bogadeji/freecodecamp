@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		#header {
+			position: relative;
+		}
+		#nav-bar {
+			position: absolute;
+			top: 0;
+		}
+		body {
+			background-color: #fff;
+			font-family: Poppins;
+		}
+		section {
+			min-height: 745px;
+		}
+		section:last-child, section:nth-last-child(2) {
+			min-height: unset;
+		}
+		header {
+			width: 100%;
+			background-color: #fff;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			margin: auto 0;
+			display: flex;
+			align-items: center;
+		
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+
+			color: #22262A !important;
+			padding: 0 150px;
+		}
+		nav img {
+			display: none;
+		}
+		#logo {
+			font-family: Poppins;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 28px;
+			line-height: 42px;
+		}
+		.nav-links {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+			font-family: Poppins;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 15px;
+			line-height: 27px;
+			width: 50%;
+			text-decoration: unset;
+		}
+		a:-webkit-any-link {
+			text-decoration: unset;
+			color: inherit;
+		}
+		.nav-icons {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+			width: 13%;
+		}
+		#lookbook {
+			background: url("./assets/11.svg") no-repeat center center; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			padding: unset;
+			/*height: 745px;*/
+			position: relative;
+		}
+		#lookbook>* {
+			padding: 0 150px;
+			text-align: left;
+		}
+		.lookbook-content {
+			position: absolute;
+			bottom : 40px;
+			right: 0;
+		}
+		.lookbook-content p, #ending-banner p {
+			font-family: Poppins;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 27px;
+		}
+		.lookbook-content h1, #ending-banner h1 {
+			font-family: Poppins;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 80px;
+			line-height: 120px;
+		}
+		.lookbook-content div {
+			margin-top: 30px;
+		}
+		.lookbook-content button, #ending-banner button {
+			font-family: Poppins;\
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 27px;
+			text-align: center;
+			color: #FFFFFF;
+			padding: 5px 20px;
+			background-color: #000
+		}
+		#images {
+      margin: 0 150px;
+      padding-top: 100px;
+      /*max-height: 745px;*/
+      display: flex;
+      flex-direction: row;
+    }
+    #images > div {
+       flex: 50%;
+       height: 100%
+    }
+    #images > #first-column {
+      margin-right: 7px;
+    }
+    #images > #first-column > #first-column-1 {
+      margin-bottom: 7px
+    }
+    #images > #first-column > #first-column-2 {
+      display: flex;
+      flex-direction: row;
+      margin-top: 7px
+    }
+    #images > #first-column > #first-column-2 > div {
+      flex: 50%;
+    }
+    #images > #first-column > #first-column-2 > div:first-child {
+      margin-right: 7px;
+    }
+    #images > #first-column > #first-column-2 > div:last-child {
+      margin-left: 7px
+    }
+    #images > #first-column > div {
+      flex: 50%;
+    }
+    #images > #second-column {
+      margin-left: 7px;
+    }
+    #images > #second-column img {
+    }
+    #images #second-column:before {
+      background-color: #C4C4C4
+    }
+    #images img {
+        width: 100%;
+    }
+		.shop {
+			padding: 100px 150px;
+			margin: 100px 0;
+		}
+		.shop > div > h4, #features > div > h4 {
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 30px;
+			text-align: center;
+		}
+		.shop > div > p, #features > div > p {
+			font-weight: normal;
+			font-size: 15px;
+			line-height: 30px;
+			/* identical to box height */
+
+			text-align: center;
+		}
+		.shop .collection {
+			display: grid;
+		    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-template-rows: repeat(auto-fit, minmax(5px, 450px));
+		    grid-gap: 80px;
+		    margin-top: 65px;
+		}
+
+		.shop img {
+			width: 100%;
+			/*height: 100%;*/
+		}
+		.shop .collection > div > p {
+			font-style: normal;
+			font-weight: 300;
+			font-size: 15px;
+			line-height: 22px;
+		}
+		.shop .collection > div > p:nth-child(3) {
+			font-weight: 600;
+		}
+		.shop .collection > div > p span:first-child {
+			text-decoration: line-through;
+			margin-right: 30px;
+		}
+		.shop .collection > div > p span:last-child {
+			color: red
+		}
+		#features {
+			padding: 0 150px;
+			margin-bottom: 200px;
+		}
+		#features-images {
+			display: flex;
+		    margin-top: 150px;
+		}
+		#features-images > div {
+			flex: 50%;
+		}
+		#features-images > div img {
+			width: 100%
+		}
+		#features-images > div:first-child {
+			margin-right: 10px;
+		}
+		#features-images > div:last-child {
+			margin-left: 10px;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+		}
+		#features-images > div:last-child div:first-child {
+			position: absolute;
+			top: -86px
+		}
+		#features-images > div:last-child div:first-child img {
+			width: 90%
+		}
+		#features-images > div:last-child div:nth-child(2) {
+			width: 50%;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			-webkit-box-shadow: -28px -29px 1px 4px #fff; 
+			box-shadow: -28px -29px 1px 4px #fff;
+			
+		}
+		#features-images > div:last-child a {
+			position: absolute;
+			left: 70px;
+			bottom: 50px;
+		}
+		#ending-banner {
+			background: lightblue url("./assets/17 1.svg") no-repeat center center; 
+  			-webkit-background-size: cover;
+  			-moz-background-size: cover;
+ 			-o-background-size: cover;
+  			background-size: cover;
+			height: 745px;
+			padding: 0 150px;
+			text-align: left;
+			position: relative;
+		}
+		#ending-banner > div {
+			margin: 0 150px;
+			position: absolute;
+			bottom : 40px;
+			left: 0;
+		}
+		footer section {
+			display: flex;
+			flex-direction: row
+			font-style: normal;
+			font-weight: normal;
+			font-size: 13px;
+			line-height: 22px;
+		}
+		footer section > div {
+			flex: 50%;
+		}
+		footer section h3 {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 25px;
+			line-height: 37px;
+		}
+		footer section:first-child {
+			background-color: #F2F8FC;
+			padding: 115px 150px;
+			text-align: left;
+			height: 600px;
+		}
+		footer section:last-child {
+			background-color: #E7F5F8;
+			padding: 35px 150px;
+			text-align: center;
+			height: 45px;
+		}
+		footer #form {
+			height: 45px;
+			background: #FFFFFF;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.07);
+			border-radius: 5px;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 13px;
+			line-height: 22px;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 35px;
+			margin-bottom: 50px;
+		}
+		footer #form input[type="email"] {
+			height: 45px;
+			border: unset;
+			padding: 0 20px;
+			width: 80%;
+		}
+		footer #form input[type="email"]:focus {
+			outline: unset;
+		}
+		footer #form input[type="submit"] {
+			border: unset;
+			background-color: #fff;
+			font-weight: 600;
+			margin-right: 20px;
+		}
+		footer section:first-child p {
+			margin: 20px 0;
+		}
+		footer section:first-child p.email {
+			margin-bottom: 2px;
+		}
+		footer section:first-child p.number {
+			margin-top: 5px;
+		}
+		footer section:first-child hr {
+			border: 0.5px solid #000000;
+			width: 40%;
+		}
+
+		#footer-flex {
+			display: flex;
+			flex-direction: row;
+		}
+		#footer-flex h4 {
+			font-style: normal;
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 30px;
+		}
+		#footer-flex > div {
+			flex: 33.3333%
+		}
+		#footer-flex > div:first-child {
+			margin-right: 30px;
+		}
+		#footer-flex > div:last-child {
+			margin-left: 30px;
+		}
+		#social-media {
+			display: flex;
+		}
+		@media only screen and (max-width : 780px) {
+			.shop .collection {
+				grid-gap: 30px;
+			}
+			footer section > div {
+				flex: 100%;
+			}
+			footer section {
+			display: block;
+			flex-direction: row
+			font-style: normal;
+			font-weight: normal;
+			font-size: 13px;
+			line-height: 22px;
+		}
+		}
+		@media only screen  and (min-width : 1824px) {
+		/* Styles */
+		.shop {
+			min-height: 900px;
+		}
+		}
+		@media only screen  and (max-width : 600px) {
+			.shop .collection {
+				display: grid;
+			    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				grid-template-rows: repeat(auto-fit, minmax(5px, 900px));
+			    grid-gap: 80px;
+			    margin-top: 65px;
+			}
+			.shop .collection > div > p {
+				font-style: normal;
+				font-weight: 300;
+				font-size: 12px;
+				line-height: 15px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header id="header">
+			<div id="logo"><p>YOUR LOGO</p></div>
+			<img src="" id="header-img">
+			<div class="nav-links">
+				<a href="#header" class="nav-link"><p>HOME</p></a>
+				<a href="#shop" class="nav-link"><p>SHOP</p></a>
+				<a href="#lookbook" class="nav-link"><p>LOOKBOOK</p></a>
+				<a href="#features" class="nav-link"><p>FEATURES</p></a>
+				<a ><p>PAGES</p></a>
+				<a><p>BLOG</p></a>
+			</div>
+			<div class="nav-icons">
+				<i role="button" tabindex="0" class="material-icons">search</i>
+				<i role="button" tabindex="0" class="material-icons">favorite_border</i>
+				<i role="button" tabindex="0" class="material-icons-outlined">shopping_cart</i>
+			</div>
+	</header>
+	<main>
+		<section id="lookbook">
+			<div class="lookbook-content">
+				<p>NEW TREND</p>
+				<h1>COLLUSION</h1>
+				<p>An exclusive selection of this season's trends</p>
+				<div>
+					<button>DISCOVER</button>
+					<button>SHOP NOW</button>
+				</div>
+			</div>
+		</section>
+		<section id="images">
+			<div id="first-column">
+				<div id="first-column-1">
+					<img src="./assets/2.svg" alt="" />
+				</div>
+				<div id="first-column-2">
+					<div>
+						<img src="./assets/3.svg" alt="" />
+					</div>
+					<div>
+						<img src="./assets/4.svg" alt="" />
+					</div>
+				</div>
+			</div>
+			<div id="second-column">
+				<img src="./assets/1.svg" alt="" />
+			</div>
+			<!-- <div>
+				<img src="./assets/Group 5.svg">
+			</div> -->
+		</section>
+		<section class="shop">
+			<div>
+				<h4>WOMEN'S FASHION</h4>
+				<p>Shop our new arrivals from established brands</p>
+			</div>
+			<div class="collection">
+				<div>
+					<img src="./assets/8.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/9.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/6.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/7.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+			</div>
+		</section>
+		<section class="shop">
+			<div>
+				<h4>MEN'S FASHION</h4>
+				<p>Shop our new arrivals from established brands</p>
+			</div>
+			<div class="collection">
+				<div>
+					<img src="./assets/13.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/11 2.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/10.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/12.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/13.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/11 2.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/10.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+				<div>
+					<img src="./assets/12.svg">
+					<p>IGURE</p>
+					<p>GREEN MUSCLE FIT POLO SHIRT</p>
+					<p><span>$220.00</span><span>$129.00</span></p>
+				</div>
+			</div>
+		</section>
+		<section id="features">
+			<div>
+				<h4>AVONE STYLES</h4>
+				<p>Choose Your Favorite Color</p>
+			</div>
+			<div id="features-images">
+				<div>
+					<img src="./assets/14.svg">
+				</div>
+				<div>
+					<div>
+						<img src="./assets/15.svg">
+					</div>
+					<div>
+						<img src="./assets/16.svg">
+					</div>
+					<a href=""><p>SHOW WOMEN'S DRESS</p></a>
+				</div>
+			</div>
+		</section>
+		<section id="ending-banner">
+			<div>
+				<p>OWN THE DAY</p>
+				<h1>TACHEN 19</h1>
+				<div>
+					<button>SHOP COLLECTION</button>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<section>
+			<div>
+				<h3>YOUR LOGO</h3>
+				<p>We earned a reputation of being good at what we do.<br>
+				Let us take your online shop to new dimensions in success!</p>
+				<p>&copy; Camilla, Bangladesh 3500</p>
+				<p class="email">kawsarahmed0210@gmail.com</p><hr>
+				<p class="number">01647470457</p>
+
+				<div id="social-media">
+					<i role="button" tabindex="0" class="material-icons">facebook</i>
+					<i role="button" tabindex="0" class="material-icons">instagram</i>
+					<i class="lni lni-twitter-original"></i>
+					<i role="button" tabindex="0" class="material-icons">linkedin</i>
+				</div>
+			</div>
+			<div>
+				<div>
+					<h3>RECEIVE EMAIL UPDATES</h3>
+				</div>
+				<div>
+					<form id="form">
+						<input type="email" name="" id="email" placeholder="Your Email Address">
+						<input type="submit" name="" id="submit" value="JOIN">
+					</form>
+				</div>
+				<div id="footer-flex">
+					<div>
+						<h4>SHOP</h4>
+						<p>Shop</p>
+						<p>Collection</p>
+						<p>Outlet</p>
+						<p>Lookbook</p>
+					</div>
+					<div>
+						<h4>HELP</h4>
+						<p>FAQ</p>
+						<p>Privacy Policy</p>
+						<p>Terms and Conditions</p>
+						<p>Return and Exchanges</p>
+					</div>
+					<div>
+						<h4>ABOUT</h4>
+						<p>Journal</p>
+						<p>Our Story</p>
+						<p>Contact</p>
+						<p>Store Location</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section >
+			<div>
+				<p>Copyright &copy; 2020. Your company name All rights reserved</p>
+			</div>
+		</section>
+	</footer>
+
+</body>
+</html>
