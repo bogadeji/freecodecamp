@@ -35,7 +35,7 @@
         }
         nav ul li {
             list-style: none;
-            margin: 50px;
+            margin: 30px;
         }
         nav ul li a {
             text-decoration: none;
@@ -309,6 +309,7 @@
         <section id="projects">
             <div class="project-grid">
                 <div class="project-tile">
+                    <div></div>
                     <a href=""></a>
                 </div>
             </div>
@@ -343,6 +344,17 @@
     </footer>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
+                document.getElementById("navbar").style.backgroundColor = "#fff";
+            } else {
+                document.getElementById("navbar").style.backgroundColor = "unset";
+            }
+        }
+    </script>
 
 </body>
 </html>
