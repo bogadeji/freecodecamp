@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+        /* @import 'https://fonts.googleapis.com/css?family=Lato:400,700'; */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, header>div {
+            background-color: #eee;
+            font-family: 'Lato', sans-serif;
+        }
+        header {
+            position: relative;
+        }
+        header>div {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 20px;
+            min-height: 75px;
+            width: 100%;
+        }
+        header #logo {
+            width: 60vw;
+        }
+        header img {
+            max-width: 300px;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 35vw;
+        }
+        nav a.nav-link {
+            text-decoration: unset;
+            color: #000;
+        }
+        main {
+            margin-top: 70px;
+        }
+        #email-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #email-form h2 {
+            margin-bottom: 20px;
+        }
+        #email-form input[type='email'] {
+            max-width: 275px;
+            width: 100%;
+            padding: 8px;
+        }
+        #email-form input[type='submit'] {
+            font-weight: 900;
+            padding: 5px 20px;
+        }
+        .btn {
+            margin: 15px 0;
+            background-color: #f1c40f;
+            padding: 10px 20px;
+            border: unset;
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        #features {
+            margin-top: 30px;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 125px;
+            width: 20vw;
+            color: darkorange;
+        }
+        .feature-txt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 125px;
+            width: 80vw;
+            padding: 5px;
+        }
+        #how-it-works {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        #how-it-works > iframe {
+            max-width: 560px;
+            width: 100%;
+        }
+        #pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .pricing-grid {
+            border: 1px solid;
+            width: calc(100%/3);
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            text-align: center;
+            flex-direction: column;
+        }
+        .pricing-grid .pricing-header {
+            padding: 15px 0;
+            background-color: #ddd;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .price {
+            margin-top: 15px;
+        }
+        .pricing-grid ul {
+            margin: 15px 0;
+        }
+        .pricing-grid ul li {
+            list-style: none;
+            padding: 5px 0;
+        }
+        footer {
+            margin-top: 30px;
+        }
+        footer .container {
+            background-color: #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-links p {
+            margin: 5px 10px;
+        }
+        .copyright {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 550px) {
+            .feature-icon {
+                display: none;
+            }
+            .feature-txt {
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+        }
+        @media (max-width: 650px) {
+            .logo img {
+                margin: 0 auto;
+            }
+            nav {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                margin: 10px auto;
+                width: 100%;
+            }
+            #pricing {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 600px) {
+            #email-form h2 {
+                margin-top: 75px;
+            }
+            header>div{
+                flex-wrap: wrap;
+            }
+            header #logo {
+                width: 100%;
+                margin: 10px 0 5px;
+                text-align: center;
+            }
+        }
+        @media (max-width: 800px) {
+            #pricing {
+                flex-direction: column;
+            }
+            .pricing-grid {
+                max-width: 300px;
+                width: 100%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div>
+            <div id="logo">
+                <img id="header-img" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png" alt="original trombones logo">
+            </div>        
+            <nav id="nav-bar">
+                <a class="nav-link" href="#features">Features</a>
+                <a class="nav-link" href="#how-it-works">How It Works</a>
+                <a class="nav-link" href="#pricing">Pricing</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="email-form">
+            <h2>Handcrafted, home-made masterpieces</h2>
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                <input id="email" name="email" type="email" placeholder="Enter your email address">
+                <input value="Get Started" id="submit" type="submit" class="btn">
+            </form>
+        </section>
+        <section id="features" class="container">
+            <div class="features">
+                <div class="feature-icon">
+                    <i class="fa fa-3x fa-fire"></i>
+                </div>
+                <div class="feature-txt">
+                    <h1>Premium Materials</h1>
+                    <p>Out trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-icon">
+                    <i class="fa fa-3x fa-truck"></i>
+                </div>
+                <div class="feature-txt">
+                    <h1>Fast Shipping</h1>
+                    <p>We make sure you receive your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-icon">
+                    <i class="fa fa-3x fa-battery-full"></i>
+                </div>
+                <div class="feature-txt">
+                    <h1>Quality Assurance</h1>
+                    <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+                </div>
+            </div> 
+        </section>
+        <section id="how-it-works" class="container">
+            <iframe
+                id="video"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&amp;controls=0&amp;showinfo=0"
+                frameborder="0"
+                allowfullscreen
+            ></iframe>
+        </section>
+        <section id="pricing" class="container">
+            <div class="pricing-grid">
+                <p class="pricing-header">
+                    Tenor Trombone
+                </p>
+                <h2 class="price">
+                    $600
+                </h2>
+                <ul class="details">
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum.</li>
+                </ul>
+                <button class="pricing-btn btn">SELECT</button>
+            </div>
+            <div class="pricing-grid">
+                <p class="pricing-header">
+                    Bass Trombone
+                </p>
+                <h2 class="price">
+                    $900
+                </h2>
+                <ul class="details">
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum.</li>
+                </ul>
+                <button class="pricing-btn btn">SELECT</button>
+            </div>
+            <div class="pricing-grid">
+                <p class="pricing-header">
+                    Valve Trombone
+                <p/>
+                <h2 class="price">
+                    $1200
+                </h2>
+                <ul class="details">
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum.</li>
+                </ul>
+                <button class="pricing-btn btn">SELECT</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="container">
+            <div class="footer-links">
+                <p>Privacy</p>
+                <p>Terms</p>
+                <p>Contact</p>
+            </div>
+            <div class="copyright">Copyright 2020, Original Trombones</div>
+        </section>
+    </footer> 
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

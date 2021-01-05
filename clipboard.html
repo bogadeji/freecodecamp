@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard landing page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        font: 100% 'Bai Jamjuree', sans-serif;
+    }
+    body {
+        /* font-family: 'Bai Jamjuree', sans-serif;
+        font-size: 16px; */
+    }
+    p {
+        font-size: 1.2em;
+        margin: 10px 0;
+        font-weight: 600;
+        line-height: 1.5em;
+    }
+    h1 {
+        font-size: 2.6em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        height: 50px;
+        width:95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        vertical-align: middle;
+        padding: 20px 40px;
+        background-color: #fff;
+        backdrop-filter: grayscale(0.5) opacity(0.8);
+    }
+    header img {
+        width: 40px;
+        margin-left: 60px;
+    }
+    #nav-bar {
+        display: inline-block;
+        font-weight: 400;
+        margin-right: 60px;
+    }
+    #nav-bar a {
+        display: inline-block;
+        text-decoration: unset;
+        margin: 0 30px;
+        color: inherit;
+    }
+    main {
+        text-align: center;
+    }
+    section {
+        min-height: 300px;
+    }
+    
+    #about, #features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #about {
+        background: url(https:://res.cloudinary.com/bogadeji/image/upload/v1608576954/Clipboard/bg-header-desktop.png) no-repeat;
+        padding: 10px 0;
+    }
+    #about h1 {
+        margin-top: 120px;
+        font-weight: 600;
+    }
+    #about h1, #features h2 {
+        margin-bottom: 5px;
+    }
+    #about .heading p {
+        font-size: 1.1em;
+        line-height: 1.8em;
+        letter-spacing: 0.5px;
+    }
+    .download-btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    button {
+        border-radius: 50px;
+        padding: 15px 40px;
+        margin: 30px 20px;
+        font-size: 1.1em;
+        font-weight: 400;
+        color: #fff;
+    }
+    .green-btn {
+        background-color: #26bba5;
+        border: 1px solid #26bba5;
+        -webkit-box-shadow: 0px 11px 16px 0px rgba(38,187,165,0.58); 
+        box-shadow: 0px 11px 16px 0px rgba(38,187,165,0.58);
+    }
+    .blue-btn {
+        background-color: #6174ff;
+        border: 1px solid #6174ff;
+        -webkit-box-shadow: 0px 11px 16px 0px rgba(97,116,255,0.58); 
+        box-shadow: 0px 11px 16px 0px rgba(97,116,255,0.58);
+    }
+     .heading {   
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    .heading p {
+        font-size: 1em;
+        line-height: 1.8em;
+        letter-spacing: 0.5px;
+    }
+    #features-div {
+        display: flex;
+        flex-direction: row;
+        margin: 100px auto;
+    }
+    #features-div>div {
+        width: 50%;
+    }
+    #feature-computer {
+        /* position: relative; */
+    }
+    #feature-computer img {
+        width: 700px;
+        position: absolute;
+        left:-50px;
+    }
+    #feature-list {
+        text-align: left;
+        margin: 0 40px;
+    }
+    #feature-list>div {
+        width: 55%;
+        text-align: left;
+        margin: 50px 80px;
+    }
+    #feature-list>div h3 {
+        font-size: 1.4em;
+    }
+    #feature-list>div p {
+        font-size: 0.9em;
+        line-height: 1.8em;
+    }
+    #features, #use, #flow, #logo-list, #download {
+        margin-top: 100px;
+    }
+    #flow>div:not(:first-child){
+        margin: 0 100px;
+    }
+    #workflows {
+        display: flex;
+        justify-content: space-between;
+    }
+    .workflow img {
+        height: 30px;
+        margin: 30px 0;
+    }
+    .workflow h3 {
+        font-size: 1.4em;
+    }
+    .workflow p {
+        font-size: 1em;
+        line-height: 1.7em;
+    }
+    .workflow:not(:first-child) {
+        margin-left: 15px;
+    }
+    .workflow:not(:last-child) {
+        margin-right: 15px;
+    }
+    
+    .workflow {
+        flex: 1;
+    }
+    #logo-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #logo-list img {
+        width: 130px;
+        margin-top: 100px;
+    }
+    #download {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    #about .heading, #download .heading {
+        margin-bottom: 10px;
+    }
+    footer {
+  background-color: #f5f6f8;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.wrapper > * {
+  /* margin: 2rem; */
+}
+
+.a {
+    flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 3fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 23rem;
+  height: auto;
+}
+
+.a p{
+  font-weight: 500;
+  font-size: 1rem;
+}
+.social > img {
+  width: 20px;
+  margin: 0 10px;
+}
+
+footer .logo img {
+  width: 50px;
+  height: auto;
+}
+    /* @media screen and (max-width: 375px) {
+        
+    }
+    @media screen (min-width: 1440px) {
+        #about {
+            background: url(https://res.cloudinary.com/bogadeji/image/upload/v1608576954/Clipboard/bg-header-desktop.png) no-repeat;
+            min-height: 700px;
+        }
+    } */
+    </style>
+</head>
+<body id="home">
+    <header id="header">
+        <div>
+            <a href="#home">
+                <img id="header-img" src="https://res.cloudinary.com/bogadeji/image/upload/v1608576952/Clipboard/logo.svg"/>
+            </a>
+        </div>
+        <nav id="nav-bar">
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#use">Use</a>
+            <a class="nav-link" href="#download">Download</a>
+            
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <!-- <div><img src="img/logo.svg" /></div> -->
+                <div class="heading">
+                    <h1>A history of everything you copy</h1>
+                    <p>Clipboard allows you to track and organize everything you copy. Instantly access your clipboard in all your devices</p>
+                </div>
+                <div class="download-btns">
+                    <button class="green-btn">Download for iOS</button>
+                    <button class="blue-btn">Download for Mac</button>
+                </div>
+        </section>
+        <section id="features">
+            <div>
+                <div class="heading">
+                    <h2>Keep track of your snippets</h1>
+                    <p>Clipboard instantly stores any item you copy in the cloud, meaning you can access your snippets immediately on all your devices. Our Mac and iOS apps will help you organize everything</p>
+                </div>
+                <div id="features-div">
+                    <div id="feature-computer">
+                        <img src="img/image-computer.png" />
+                    </div>
+                    <div id="feature-list">
+                        <div>
+                            <h3>Quick Search</h3>
+                            <p>Easily search your snippets by content, category, web address, application and more.</p>
+                        </div>
+                        <div>
+                            <h3>iCloud Sync</h3>
+                            <p>Instantly saves and syncs snippets across all your devices</p>
+                        </div>
+                        <div>
+                            <h3>Complete History</h3>
+                            <p>Retrieve any snippets from the first moment you started using the app</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="use">
+            <div class="heading">
+                <h2>Access Clipboard anywhere</h2>
+                <p>Whether you're on the go, or at your computer, you can access all your Clipboard snippets in a few simple clicks</p>
+            </div>
+            <img src="img/image-devices.png" />
+        </section>
+        <section id="flow">
+            <div class="heading">
+                <h2>Supercharge your workflow</h2>
+                <p>We've got the tools to boost your productivity.</p>
+            </div>
+            <div id="workflows">
+                <div class="workflow">
+                    <img src="img/icon-blacklist.svg" />
+                    <h3>Create blacklists</h3>
+                    <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
+                </div>
+                <div class="workflow">
+                    <img src="img/icon-text.svg" />
+                    <h3>Plain text snippets</h3>
+                    <p>Remove unwanted formatting from copied text for a consistent look.</p>
+                </div>
+                <div class="workflow">
+                    <img src="img/icon-preview.svg" />
+                    <h3>Sneak preview</h3>
+                    <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+                    
+                </div>
+            </div>
+            <div id="logo-list">
+                <img class="user-logo" src="img/logo-google.png" />
+                <img class="user-logo" src="img/logo-ibm.png" />
+                <img class="user-logo" src="img/logo-microsoft.png" />
+                <img class="user-logo" src="img/logo-hp.png" />
+                <img class="user-logo" src="img/logo-vector-graphics.png" />
+            </div>
+            <!-- <div>
+                <video id="video" src=""></video>
+            </div> -->
+        </section>
+        <section id="download">
+            <div class="heading">
+                <h2>Clipboard for iOS and Mac OS</h2>
+                <p>Available for free on the App Store. Download for Mac or iOS, sync with iCloud and you're ready to start adding to your clipboard</p>
+            </div>
+            <div class="download-btns">
+                <button class="green-btn">Download for iOS</button>
+                <button class="blue-btn">Download for Mac</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrapper">
+          <div class="logo"><img src="https://res.cloudinary.com/bogadeji/image/upload/v1608576952/Clipboard/logo.svg" /></div>
+          <div class="a">
+            <p>FAQs</p>
+            <p>Privacy Policy</p>
+            <p>Install Guide</p>
+            <p>Contact Us</p>
+            <p>Press Kit</p>
+          </div>
+          <div class="social">
+              <img src="img/icon-facebook.svg">
+              <img src="img/icon-twitter.svg">
+              <img src="img/icon-instagram.svg">
+            </div>
+        </div>
+      </footer>
+
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+</body>
+</html>
