@@ -27,6 +27,7 @@
             position: fixed;
             top: 0;
             width: 100%;
+            transition: 0.3s;
             /* margin: 20px; */
         }
         nav ul {
@@ -67,7 +68,7 @@
         #about .title {
             margin: 50px 0;
         }
-        .story, .project-grid, .skill-grid, .contact-grid {
+        .story, .skill-grid, .contact-grid {
             display: flex;
             justify-content: space-between;
         }
@@ -115,11 +116,29 @@
             text-align: center;
             color: #c49075;
         }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            grid-gap: 1rem;
+        }
+        .project-tile {
+            text-align: center;
+        }
+        .project-tile>div {
+            height: 300px;
+            border-radius: 5px;
+            background-color: #eee;
+            border: 10px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .project-tile>a:-webkit-any-link {
+            text-decoration: unset;
+            font-size: 1.1rem;
+            text-align: center;
+        }
         #contact {
             background-color: #ebebeb;
-        }
-        .contact-grid>div {
-            /* width: calc(100%/2); */
         }
         .contact-img {
             border: 10px solid #fff;
@@ -195,25 +214,32 @@
             #about, #skills, #projects, #contact {
                 padding: 50px;
             }
-        }
-        @media screen and (min-width: 650px) {
-            .story-first {
-                margin-right: 15px;
-                flex: 50%;
+            nav ul li a {
+                font-size: 0.8rem;
             }
-            .story-second {
-                margin-left: 15px;
-                flex: 50%;
+            .contact-details h2 {
+                font-size: 1.5rem;
             }
-            .skill-tile {
-                margin: 0px 50px;
-                width: calc(100%/3);
+            .contact-details h3 {
+                font-size: 1.2rem;
             }
-            .contact-grid>div {
-                width: calc(100%/2);
+            .contact-details .email {
+                font-size: 1rem;
+            }
+            .contact-details .email i {
+                font-size: 0.8em;
+            }
+            .contact-details>div:last-child {
+                margin-top: unset;
+            }
+            .contact-details>div:last-child h2 {
+                font-size: 1.3rem;
             }
         }
         @media screen and (max-width: 650px) {
+            #welcome-section {
+                background-size: contain;
+            }
             #about {
                 text-align: center;
             }
@@ -237,6 +263,27 @@
                 font-size: 3.5rem;
             }
         }
+        @media screen and (min-width: 650px) {
+            .story-first {
+                margin-right: 15px;
+                flex: 50%;
+            }
+            .story-second {
+                margin-left: 15px;
+                flex: 50%;
+            }
+            .skill-tile {
+                margin: 0px 50px;
+                width: calc(100%/3);
+            }
+            .contact-grid>div {
+                width: calc(100%/2);
+            }
+            .project-tile {
+                /* width: 100%;
+                margin: 30px auto; */
+            }
+        }
         @media screen and (max-width: 1018px) {
             .skill-grid {
                 flex-direction: column;
@@ -253,6 +300,14 @@
             }
             .contact-details {
                 margin-top: 50px;
+            }
+        }
+        @media screen and (min-width: 2000px) {
+            .project-grid {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+                grid-gap: 2em;
+                gap: 2em;
             }
         }
     </style>
@@ -328,7 +383,23 @@
             <div class="project-grid">
                 <div class="project-tile">
                     <div></div>
-                    <a href=""></a>
+                    <a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</a>
+                </div>
+                <div class="project-tile">
+                    <div></div>
+                    <a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</a>
+                </div>
+                <div class="project-tile">
+                    <div></div>
+                    <a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</a>
+                </div>
+                <div class="project-tile">
+                    <div></div>
+                    <a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</a>
+                </div>
+                <div class="project-tile">
+                    <div></div>
+                    <a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</a>
                 </div>
             </div>
         </section>
@@ -367,7 +438,7 @@
 
         function scrollFunction() {
             if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
-                document.getElementById("navbar").style.backgroundColor = "#fff";
+                document.getElementById("navbar").style.backgroundColor = "rgba(255,255,255,0.8)";
             } else {
                 document.getElementById("navbar").style.backgroundColor = "unset";
             }
