@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;display=swap" rel="stylesheet">
     <link
         rel="stylesheet"
@@ -119,11 +119,11 @@
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
             grid-gap: 1rem;
         }
         .project-tile {
             text-align: center;
+            margin: 20px 0;
         }
         .project-tile>div {
             height: 300px;
@@ -210,33 +210,57 @@
             font-size: 0.5rem;
             font-weight: 400;
         }
-        @media screen and (max-width: 480px) {
-            #about, #skills, #projects, #contact {
-                padding: 50px;
+        @media screen and (min-width: 2000px) {
+            .project-grid {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+                grid-gap: 2em;
+                gap: 2em;
             }
-            nav ul li a {
-                font-size: 0.8rem;
+        }
+        @media screen and (max-width: 1018px) {
+            .skill-grid {
+                flex-direction: column;
             }
-            .contact-details h2 {
-                font-size: 1.5rem;
+            .skill-tile {
+                width: 100%;
+                margin: 30px auto
             }
-            .contact-details h3 {
-                font-size: 1.2rem;
+            .contact-grid {
+                flex-direction: column;
             }
-            .contact-details .email {
-                font-size: 1rem;
+            .contact-grid, .contact-grid>div {
+                width: 100%;
             }
-            .contact-details .email i {
-                font-size: 0.8em;
+            .contact-details {
+                margin-top: 50px;
             }
-            .contact-details>div:last-child {
-                margin-top: unset;
+        }
+        @media screen and (min-width: 650px) {
+            .story-first {
+                margin-right: 15px;
+                flex: 50%;
             }
-            .contact-details>div:last-child h2 {
-                font-size: 1.3rem;
+            .story-second {
+                margin-left: 15px;
+                flex: 50%;
+            }
+            .skill-tile {
+                margin: 0px 50px;
+                width: calc(100%/3);
+            }
+            .contact-grid>div {
+                width: calc(100%/2);
+            }
+            .project-tile {
+                /* width: 100%;
+                margin: 30px auto; */
             }
         }
         @media screen and (max-width: 650px) {
+            #about, #skills, #projects, #contact {
+                padding: 50px;
+            }
             #welcome-section {
                 background-size: contain;
             }
@@ -261,53 +285,47 @@
             }
             #welcome-section h1 {
                 font-size: 3.5rem;
+                line-height: 4.5rem;
             }
         }
-        @media screen and (min-width: 650px) {
-            .story-first {
-                margin-right: 15px;
-                flex: 50%;
+        @media screen and (max-width: 480px) {
+            #welcome-section h1 {
+                padding: 200px 30px;
+                font-size: 2.5rem;
             }
-            .story-second {
-                margin-left: 15px;
-                flex: 50%;
+            #about, #skills, #projects, #contact {
+                padding: 30px;
             }
-            .skill-tile {
-                margin: 0px 50px;
-                width: calc(100%/3);
-            }
-            .contact-grid>div {
-                width: calc(100%/2);
-            }
-            .project-tile {
-                /* width: 100%;
-                margin: 30px auto; */
-            }
-        }
-        @media screen and (max-width: 1018px) {
-            .skill-grid {
-                flex-direction: column;
-            }
-            .skill-tile {
-                width: 100%;
-                margin: 30px auto
-            }
-            .contact-grid {
-                flex-direction: column;
-            }
-            .contact-grid, .contact-grid>div {
-                width: 100%;
+            nav ul li a {
+                font-size: 0.8rem;
             }
             .contact-details {
-                margin-top: 50px;
+                margin-top: 20px;
             }
-        }
-        @media screen and (min-width: 2000px) {
+            .contact-details h2 {
+                font-size: 1.5rem;
+            }
+            .contact-details h3 {
+                font-size: 1.2rem;
+            }
+            .contact-details .email {
+                font-size: 1rem;
+            }
+            .contact-details .email i {
+                font-size: 0.8em;
+            }
+            .contact-details>div:last-child {
+                margin-top: unset;
+            }
+            .contact-details>div:last-child h2 {
+                font-size: 1.3rem;
+            }
+            .contact-img {
+                width: 90% !important;
+                margin: 0 auto;
+            }
             .project-grid {
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-                grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
-                grid-gap: 2em;
-                gap: 2em;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
         }
     </style>
